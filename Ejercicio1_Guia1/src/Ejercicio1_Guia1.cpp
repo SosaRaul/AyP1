@@ -1,3 +1,9 @@
+//============================================================================
+// Name        : Ejercicio1_Guia1.cpp
+// Author      : RaulSosa
+// Version     :
+// Description : Modelar una tipo de dato para una carta de una baraja.
+//============================================================================
 
 #include <string>
 #include <iostream>
