@@ -2,7 +2,7 @@
 // Name        : Ejercicio1_Guia1.cpp
 // Author      : RaulSosa
 // Version     :
-// Description : Modelar una tipo de dato para una carta de una baraja.
+// Description : Modelar un tipo de dato que represente la versión de un archivo
 //============================================================================
 
 #include <iostream>

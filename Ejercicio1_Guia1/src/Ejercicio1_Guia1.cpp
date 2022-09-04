@@ -23,7 +23,7 @@ struct Baraja{
 
 
 
-// Pre:
+// Pre: Ninguna
 // Post : Devuelve una instancia válida de Carta
 
 Carta* CrearCarta(string palo,int valor){
