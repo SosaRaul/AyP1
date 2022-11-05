@@ -3,7 +3,6 @@
 namespace TDAPila{
 
 	struct Pila;
-	struct Nodo;
 
 	Pila* CrearPila();
 	// Pre: Debe existir una Pila.

@@ -4,7 +4,7 @@
 using namespace std;
 
 
-struct TDAPila::Nodo{
+struct Nodo{
 	int valor;
 	Nodo *sig;
 };
@@ -12,12 +12,11 @@ struct TDAPila::Pila{
 	Nodo *cima;
 };
 
-TDAPila::Nodo* ObtenerNodo(int valor){
-	TDAPila::Nodo *nuevoNodo = new TDAPila::Nodo;
+Nodo* ObtenerNodo(int valor){
+	Nodo *nuevoNodo = new Nodo;
 	nuevoNodo->valor = valor;
 	nuevoNodo->sig = nullptr;
 	return nuevoNodo;
-
 }
 void TDAPila::Apilar(Pila *pila,int valor){
 	Nodo *nuevoNodo = ObtenerNodo(valor);
