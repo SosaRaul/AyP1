@@ -1,0 +1,89 @@
+#pragma once
+#include "Registro.h"
+#include <string>
+
+using UDBRegistro::Registro;
+using std::string;
+
+namespace UDBParticion {
+	struct Particion;
+	struct NodoRegistro;
+	struct ListaRegistros;
+
+	/*
+	* Precondicion: Ninguna
+	* Postcondicion: Si el rango no es valido devuelve NULL
+	* Si el rango es valido crea una instancia valida de Particion que utilizara los identificadores
+	* de @inicioRango a @finRango para sus registros
+	*/
+	Particion* Crear(int inicioRango, int finRango);
+
+	/*
+	* Precondicion: Ninguna
+	* Postcondicion: Crea una nueva ListaRegistros vacia
+	*/
+	ListaRegistros* CrearListaRegistros();
+
+	/*
+	* Precondicion: Ninguna
+	* Postcondicion:Crea un nuevo NodoRegistro vacio
+	*/
+	NodoRegistro* CrearNodoRegistro();
+
+	/*
+	* Precondicion: Ninguna
+	* Postcondicion: Valida que @particion sea una instancia valida
+	*/
+	bool EsParticionValida(Particion* particion);
+
+	/*
+	* Precondicion: @particion es una instancia valida
+	* Postcondicion: Obtiene el rango inicial de @particion
+	*/
+	int ObtenerInicioRango(Particion* particion);
+
+	/*
+	* Precondicion: @particion es una instancia valida
+	* Postcondicion: Obtiene el rango final de @particion
+	*/
+	int ObtenerFinRango(Particion* particion);
+
+	/*
+	* Precondicion: @particion es una instancia valida
+	* Postcondicion: Obtiene la cantidad de registros disponibles de @particion
+	*/
+	int ObtenerRegistrosDisponibles(Particion* particion);
+
+	/*
+	* Precondicion: @particion es una instancia valida
+	* Postcondicion: Si tiene el registro con identificador igual a @identificador lo devuelve
+	* Caso contrario devuelve NULL
+	*/
+	Registro* ObtenerRegistro(Particion* particion, int identificador);
+
+	/*
+	* Precondicion: @particion es una instancia valida
+	* Postcondicion: Agrega un nuevo registro de valor igual a @valor y con id dentro del rango. Si no es posible no realiza ninguna accion
+	*/
+	void AgregarRegistro(Particion* particion, string valor);
+
+	/*
+	* Precondicion: @particion es una instancia valida
+	* Postcondicion: Modifica el registro con identificador igual a @identificador asignandole @valor
+	* Si no existe el registro en la particion no realiza ninguna accion
+	*/
+	void ActualizarRegistro(Particion* particion, int identificador, string valor);
+
+	/*
+	* Precondicion: @particion es una instancia valida
+	* Postcondicion: Quita el registro con identificador @identificador de la @particion.
+	* Si no existe el registro no realiza ningua accion
+	*/
+	void EliminarRegistro(Particion* particion, int identificador);
+
+	/*
+	* Precondicion: @particion es una instancia valida
+	* Postcondicion: Libera todos los recursos asociados de @particion
+	*/
+	void Destruir(Particion* particion);
+}
