@@ -1,6 +1,6 @@
 #include "Busqueda.h"
 #include<vector>
-
+#include<iostream>
 
 int Busqueda::LinearSearch(std::vector<int> arr,int value){
     unsigned int i = 0;
@@ -9,7 +9,8 @@ int Busqueda::LinearSearch(std::vector<int> arr,int value){
     }
     return i == arr.size() ? -1 : i;
 }
-int Busqueda::BinarySearch(std::vector <int> arr, int value){
+// My version
+int Busqueda::BinarySearchv2(std::vector <int> arr, int value){
     int firstIndex = 0 , lastIndex = arr.size()-1;
     int  centralIndex = (firstIndex+lastIndex)/2;
     while(firstIndex<=lastIndex && arr[centralIndex] != value){
@@ -25,4 +26,19 @@ int Busqueda::BinarySearch(std::vector <int> arr, int value){
         centralIndex = (firstIndex+lastIndex)/2;
     }
     return firstIndex > lastIndex ? -1 : centralIndex;
+}
+// Version Sedgewick
+int Busqueda::BinarySearch(std::vector<int> arr,int key){
+	int lo = 0, hi = arr.size()-1;
+	while(lo <= hi){
+		int mid = lo+(hi-lo)/2;
+		if(key < arr[mid]){
+			hi = mid-1;
+		}else if(key > arr[mid]){
+			lo = mid+1;
+		}else{
+			return mid;
+		}
+	}
+	return -1;
 }
