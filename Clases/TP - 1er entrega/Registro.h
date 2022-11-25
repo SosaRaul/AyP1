@@ -35,4 +35,7 @@ namespace UDBRegistro
 	* Postcondicion: Libera todos los recursos asociados a @registro
 	*/
 	void Destruir(Registro* registro);
+
+
+
 }

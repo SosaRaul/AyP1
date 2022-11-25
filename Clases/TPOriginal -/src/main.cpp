@@ -33,7 +33,7 @@ void Mostrar(Particion* particion, int comienzo, int fin) {
 }
 
 Particion* CrearEstudiantesAlgortimos() {
-    Particion* estudiantes = Crear(1000, 10010);
+    Particion* estudiantes = Crear(1000, 1010);
     AgregarRegistro(estudiantes, "Alejandro Colli");
     AgregarRegistro(estudiantes, "Alex Urquiza");
     AgregarRegistro(estudiantes, "Cesar Vacirca");
