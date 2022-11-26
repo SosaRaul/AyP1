@@ -1,4 +1,5 @@
 // Status : Funcionan OK las primitivas
+// Implementacion con listas simplemente enlazadas.
 #include "Pila.h"
 #include <iostream>
 using namespace std;
